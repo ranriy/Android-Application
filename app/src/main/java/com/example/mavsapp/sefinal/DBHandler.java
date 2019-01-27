@@ -55,7 +55,7 @@ public class DBHandler extends SQLiteOpenHelper{
      */
 
     // Adding new Student Information
-    void addNewStudent(Student newStud) {
+    boolean addNewStudent(Student newStud) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -66,7 +66,31 @@ public class DBHandler extends SQLiteOpenHelper{
 
 
         // Inserting Row
-        db.insert(TABLE_STUDENT_DETAIL, null, values);
+        long id = db.insert(TABLE_STUDENT_DETAIL,null,values);
+        //db.insert(TABLE_STUDENT_DETAIL, null, values);
         db.close(); // Closing database connection
+        if(id > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public Student findStudent(String username) {
+        String query = "Select * FROM " + TABLE_STUDENT_DETAIL + " WHERE " + KEY_NAME + " =  \"" + username + "\"";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        Student student = new Student();
+        //System.out.println(cursor);
+
+        if (cursor.moveToFirst()) {
+
+        } else {
+            student = null;
+        }
+        db.close();
+        return student;
     }
 }

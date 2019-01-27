@@ -29,6 +29,6 @@
             android:name=".tempcheck"
             android:label="@string/title_activity_tempcheck" >
         </activity>
-    </application>
 
+    </application>
 </manifest>

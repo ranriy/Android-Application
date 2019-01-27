@@ -12,8 +12,8 @@ public class Student {
     }
 
     //all parameter in Constructor
-    public Student(int _id, String _name, String _password){
-        this._id = _id;
+    public Student( String _name, String _password){
+        //this._id = _id;
         this._name = _name;
         this._password = _password;
     }

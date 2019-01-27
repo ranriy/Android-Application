@@ -18,6 +18,7 @@
         android:layout_marginBottom="-271dp"
         android:focusable="true"
         android:hint="Confirm Password"
+        android:inputType="textPassword"
         android:textColorHighlight="#ff7eff15"
         android:textColorHint="#2711ff" />
 
@@ -33,6 +34,7 @@
         android:layout_marginBottom="-226dp"
         android:focusable="true"
         android:hint="Create Password"
+        android:inputType="textPassword"
         android:textColorHighlight="#ff7eff15"
         android:textColorHint="#2711ff" />
 
